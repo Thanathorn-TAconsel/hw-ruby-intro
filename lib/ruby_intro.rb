@@ -63,10 +63,29 @@ def binary_multiple_of_4? s
 
 end
 
-puts binary_multiple_of_4?("100000 0")
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn,price)
+    raise ArgumentError.new("isbn Error") unless isbn.length() != 0
+    raise ArgumentError.new("Price Error") unless price > 0
+    @isbn = isbn
+    @price = price
+  end
+  def price_as_string
+    return "$%.2f" % @price
+  end
+  def isbn
+    @isbn
+  end
+  def price
+    @price
+  end
+  def isbn=(isbn)
+    @isbn = isbn
+  end
+  def price=(price)
+    @price = price
+  end
 end
